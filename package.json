@@ -20,5 +20,8 @@
   "homepage": "https://github.com/rohmads/notes-app-back-end#readme",
   "devDependencies": {
     "eslint": "^8.19.0"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^20.2.2"
   }
 }
