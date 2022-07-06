@@ -1,6 +1,7 @@
 const { nanoid } = require("nanoid")
 const notes = require('./notes')
 
+// add notes (input)
 const addNoteHandler = (request, h) => {
   const { title, tags, body } = request.payload
   const id = nanoid(16)
@@ -33,6 +34,7 @@ const addNoteHandler = (request, h) => {
   return response
 }
 
+// view all notes (read)
 const getAllNotesHandler = () => ({
   status: 'success',
   data: {
@@ -40,6 +42,7 @@ const getAllNotesHandler = () => ({
   }
 })
 
+// view note by id (read)
 const getNoteByIdHandler = (request, h) => {
   const { id } = request.params
 
@@ -61,6 +64,7 @@ const getNoteByIdHandler = (request, h) => {
   return response
 }
 
+// edit/update note (update)
 const editNoteByIdHandler = (request, h) => {
   const { id } = request.params
   const { title, tags, body } = request.payload
@@ -88,6 +92,7 @@ const editNoteByIdHandler = (request, h) => {
   return response
 }
 
+// delete notes by id (delete)
 const deleteNoteByIdHandler = (request, h) => {
   const { id } = request.params
 
